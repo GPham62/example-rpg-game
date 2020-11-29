@@ -3,6 +3,7 @@ using GameDevTV.Saving;
 using UnityEngine;
 using UnityEngine.AI;
 using RPG.Attributes;
+using System;
 
 namespace RPG.Movement
 {
@@ -14,7 +15,7 @@ namespace RPG.Movement
 
         NavMeshAgent navMeshAgent;
         Health health;
-
+        
         private void Awake() {
             navMeshAgent = GetComponent<NavMeshAgent>();
             health = GetComponent<Health>();
@@ -23,7 +24,6 @@ namespace RPG.Movement
         void Update()
         {
             navMeshAgent.enabled = !health.IsDead();
-
             UpdateAnimator();
         }
 

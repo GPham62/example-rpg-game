@@ -63,10 +63,9 @@ namespace GameDevTV.Inventories
         void ISaveable.RestoreState(object state)
         {
             bool shouldBeCollected = (bool)state;
-
             if (shouldBeCollected && !isCollected())
             {
-                DestroyPickup();
+                DestroyPickup(); 
             }
 
             if (!shouldBeCollected && isCollected())

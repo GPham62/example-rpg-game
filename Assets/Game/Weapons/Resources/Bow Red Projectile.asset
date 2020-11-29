@@ -12,11 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2591c982fc81e940845bedeabeb30af, type: 3}
   m_Name: Bow Red Projectile
   m_EditorClassIdentifier: 
+  itemID: 5097618e-26b2-431d-bcce-ed724aa2b890
+  displayName: Red Bow
+  description: 
+  icon: {fileID: 0}
+  pickup: {fileID: 0}
+  stackable: 0
+  allowedEquipLocation: 5
   animatorOverride: {fileID: 22100000, guid: 7c518292ef86c7f4e9013387a17357f5, type: 2}
   equippedPrefab: {fileID: 4911969040163012980, guid: 47fed8d359a579e4a89dcd0029bd3edc,
     type: 3}
-  weaponDamage: 5
-  percentageBonus: 0
+  weaponDamage: 10
+  percentageBonus: 33
   weaponRange: 20
   isRightHanded: 0
   projectile: {fileID: 165373491224697001, guid: ac606dd30cb860948b6895606e76eacd,

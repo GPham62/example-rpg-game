@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WindMill : MonoBehaviour
+namespace RPG.Environment
 {
-    private void Update() {
-        transform.Rotate(0, 0, 20*Time.deltaTime);
+    public class WindMill : MonoBehaviour
+    {
+        private void Update()
+        {
+            transform.Rotate(0, 0, 20 * Time.deltaTime);
+        }
     }
+
 }

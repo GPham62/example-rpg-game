@@ -6,12 +6,15 @@ using System;
 using UnityEngine.EventSystems;
 using UnityEngine.AI;
 using GameDevTV.Inventories;
+using Cinemachine;
 
 namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
         Health health;
+        public GameObject cinemachine;
+        CinemachineFreeLook freeLook;
 
         [System.Serializable]
         struct CursorMapping
@@ -30,11 +33,13 @@ namespace RPG.Control
         private void Awake()
         {
             health = GetComponent<Health>();
+            freeLook = cinemachine.GetComponent<CinemachineFreeLook>();
         }
 
         private void Update()
         {
             CheckSpecialAbilityKeys();
+            RotateCamera();
             if (InteractWithUI()) return;
             if (health.IsDead())
             {
@@ -76,8 +81,19 @@ namespace RPG.Control
             {
                 actionStore.Use(5, gameObject);
             }
+        }
 
-
+        private void RotateCamera(){
+            if (Input.GetMouseButton(1)){
+                freeLook.m_XAxis.m_MaxSpeed = 500;
+            }
+            if (Input.GetMouseButtonUp(1)) {
+                freeLook.m_XAxis.m_MaxSpeed = 0;
+            }
+            if (Input.mouseScrollDelta.y != 0)
+            {
+                freeLook.m_YAxis.m_MaxSpeed = 100;
+            }
         }
 
         private bool InteractWithUI()

@@ -108,7 +108,7 @@ namespace GameDevTV.Saving
             }
         }
 
-        private string GetPathFromSaveFile(string saveFile)
+        public string GetPathFromSaveFile(string saveFile)
         {
             return Path.Combine(Application.persistentDataPath, saveFile + ".sav");
         }
